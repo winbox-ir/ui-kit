@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import type { ComponentProps, FC } from 'react'
-import { GoThreeBars } from 'react-icons/go'
+// import { GoThreeBars } from 'react-icons/go'
 import { theme } from './navbar.theme'
 import { useNavbarContext } from './NavbarContext'
 
@@ -9,7 +9,8 @@ export interface NavbarToggleProps extends ComponentProps<'button'> {
 }
 
 export const NavbarToggle: FC<NavbarToggleProps> = ({
-  barIcon: BarIcon = GoThreeBars,
+  // barIcon: BarIcon = GoThreeBars,
+  barIcon: BarIcon = null, // TODO:
   className,
   ...props
 }) => {
@@ -27,7 +28,7 @@ export const NavbarToggle: FC<NavbarToggleProps> = ({
       {...props}
     >
       <span className="sr-only">Open main menu</span>
-      <BarIcon className={theme.toggle.icon} />
+      {/* <BarIcon className={theme.toggle.icon} /> */}
     </button>
   )
 }
