@@ -1,4 +1,3 @@
-"use client"
 import { CustomBoolean } from "../../types"
 import { TextareaColors } from "./Textarea"
 

@@ -1,4 +1,3 @@
-"use client"
 import type { Placement } from "@floating-ui/core"
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from "react"
 import { Floating, FlowbiteFloatingTheme } from "../floating/Floating"

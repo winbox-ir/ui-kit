@@ -1,4 +1,3 @@
-"use client"
 import React from "react"
 
 export const SvgLoading: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {

@@ -1,23 +1,21 @@
-"use client"
 import classNames from "classnames"
-import { useRouter } from "next/router"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
-import { useEffect, useId, useState } from "react"
+import { useId, useState } from "react"
 import { HiChevronDown } from "react-icons/hi"
 import { Tooltip } from "../tooltip"
-import { theme } from "./sidebar.theme"
 import { useSidebarContext } from "./SidebarContext"
 import type { SidebarItemProps } from "./SidebarItem"
 import { SidebarItemContext } from "./SidebarItemContext"
+import { theme } from "./sidebar.theme"
 
 export interface SidebarCollapseProps extends PropsWithChildren<ComponentProps<"button"> & SidebarItemProps> {
   open?: boolean
   href?: string
+  router: any
 }
 
-const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, href, label, className, open = false, ...props }): JSX.Element => {
+const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, href, label, className, open = false, router, ...props }): JSX.Element => {
   const id = useId()
-  const router = useRouter()
   const { isCollapsed } = useSidebarContext()
   const [isOpen, setOpen] = useState(href ? router.asPath.startsWith(href) : open)
 

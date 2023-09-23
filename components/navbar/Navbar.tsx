@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
 import { useState } from "react"
@@ -9,7 +8,7 @@ import { NavbarContext } from "./NavbarContext"
 import { NavbarLink } from "./NavbarLink"
 import { NavbarToggle } from "./NavbarToggle"
 
-export interface NavbarComponentProps extends PropsWithChildren<ComponentProps<"nav">> {
+export interface NavbarComponentProps extends PropsWithChildren<ComponentProps<"div">> {
   menuOpen?: boolean
   fluid?: boolean
   rounded?: boolean
@@ -21,9 +20,9 @@ const NavbarComponent: FC<NavbarComponentProps> = ({ children, menuOpen, fluid =
 
   return (
     <NavbarContext.Provider value={{ isOpen, setIsOpen }}>
-      <nav className={classNames(theme.base, theme.bordered[border ? "on" : "off"], theme.rounded[rounded ? "on" : "off"], className)} {...props}>
-        <div className={classNames(theme.inner.base, theme.inner.fluid[fluid ? "on" : "off"])}>{children}</div>
-      </nav>
+      <div className={classNames(theme.base, border ? theme.bordered.on : theme.bordered.off, rounded ? theme.rounded.on : theme.rounded.off, className)} {...props}>
+        <div className={classNames(theme.inner.base, fluid ? theme.inner.fluid.on : theme.inner.fluid.off)}>{children}</div>
+      </div>
     </NavbarContext.Provider>
   )
 }

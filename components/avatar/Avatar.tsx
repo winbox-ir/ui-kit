@@ -1,6 +1,4 @@
-"use client"
 import classNames from "classnames"
-import Image from "next/image"
 import type { ComponentProps, FC, PropsWithChildren, ReactElement } from "react"
 import { DeepPartial } from ".."
 import { Positions, Size, UIColors } from "../../types"
@@ -104,9 +102,7 @@ const AvatarComponent: FC<AvatarProps> = ({
     <div className={classNames(theme.root?.base, className)} data-testid="flowbite-avatar" {...props}>
       <div className="relative">
         {img ? (
-          <span className={classNames(imgClassName, theme.img?.on, "relative", "block")}>
-            <Image {...imgProps} src={img as any} fill sizes="50" priority />
-          </span>
+          <img {...imgProps} src={img as any} sizes="50" className={classNames(imgClassName, theme.img?.on, "relative", "block")} />
         ) : // typeof img === 'string' ? (
         //   <Image {...imgProps} src={img} />
         // ) : (

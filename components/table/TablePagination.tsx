@@ -1,4 +1,3 @@
-"use client"
 import { IoChevronDown } from "react-icons/io5"
 
 type Paged<T> = {

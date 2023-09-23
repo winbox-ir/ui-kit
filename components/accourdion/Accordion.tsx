@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC, PropsWithChildren, ReactElement } from "react"
 import { Children, cloneElement, useMemo, useState } from "react"
@@ -36,10 +35,10 @@ const AccordionComponent: FC<AccordionProps> = ({ alwaysOpen = false, arrowIcon 
   )
 }
 
-AccordionComponent.displayName = "Accordion"
-AccordionPanel.displayName = "Accordion.Panel"
-AccordionTitle.displayName = "Accordion.Title"
-AccordionContent.displayName = "Accordion.Content"
+// AccordionComponent.displayName = "Accordion"
+// AccordionPanel.displayName = "Accordion.Panel"
+// AccordionTitle.displayName = "Accordion.Title"
+// AccordionContent.displayName = "Accordion.Content"
 
 export const Accordion = Object.assign(AccordionComponent, {
   Panel: AccordionPanel,

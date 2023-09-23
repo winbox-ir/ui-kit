@@ -1,8 +1,6 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
 import { theme } from "./navbar.theme"
-import Link from "next/link"
 
 export interface NavbarLinkProps extends PropsWithChildren<ComponentProps<"a">> {
   active?: boolean
@@ -14,7 +12,7 @@ export interface NavbarLinkProps extends PropsWithChildren<ComponentProps<"a">> 
 export const NavbarLink: FC<NavbarLinkProps> = ({ active, disabled, href, children, className, label, ...props }) => {
   return (
     <li>
-      <Link
+      <a
         href={href ?? ""}
         className={classNames(
           theme.link.base,
@@ -29,7 +27,7 @@ export const NavbarLink: FC<NavbarLinkProps> = ({ active, disabled, href, childr
       >
         {label}
         {active ? children : null}
-      </Link>
+      </a>
     </li>
   )
 }

@@ -1,6 +1,4 @@
-"use client"
 import classNames from "classnames"
-import Link from "next/link"
 import {
   Children,
   ComponentProps,
@@ -134,7 +132,7 @@ export const TabsComponent = forwardRef<TabsRef, TabsProps>(
       <div className={classNames(theme.base, className)}>
         <div aria-label="Tabs" role="tablist" className={classNames(theme.tablist.base, theme.tablist.styles[style], className)} {...rest}>
           {tabs.map((tab, index) => (
-            <Link
+            <a
               href={tab.href ?? "#"}
               key={index}
               aria-controls={`${id}-tabpanel-${index}`}
@@ -157,7 +155,7 @@ export const TabsComponent = forwardRef<TabsRef, TabsProps>(
             >
               {tab.icon && <tab.icon className={theme.tablist.tabitem.icon} />}
               {tab.title}
-            </Link>
+            </a>
           ))}
         </div>
         {!isLinkTab ? (

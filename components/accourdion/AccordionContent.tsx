@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC } from "react"
 import { theme } from "./accordion.theme"

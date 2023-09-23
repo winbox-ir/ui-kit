@@ -1,4 +1,3 @@
-"use client"
 import React, { useRef, useState } from "react"
 import { SvgLoading } from "./SvgLoading"
 // import { Pagination } from './Pagination'

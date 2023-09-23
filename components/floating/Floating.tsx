@@ -1,4 +1,3 @@
-"use client"
 import type { Placement } from "@floating-ui/core"
 import { autoUpdate, safePolygon, useClick, useFloating, useFocus, useHover, useInteractions, useRole } from "@floating-ui/react-dom-interactions"
 import classNames from "classnames"

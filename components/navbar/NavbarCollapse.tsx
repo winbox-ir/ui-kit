@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
 import { theme } from "./navbar.theme"

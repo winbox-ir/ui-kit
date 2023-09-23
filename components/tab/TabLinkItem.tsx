@@ -1,5 +1,3 @@
-"use client"
-import Link from "next/link"
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from "react"
 
 export interface TabItemProps extends PropsWithChildren<Omit<ComponentProps<"a">, "title">> {
@@ -11,7 +9,7 @@ export interface TabItemProps extends PropsWithChildren<Omit<ComponentProps<"a">
 }
 
 export const TabLinkItem: FC<TabItemProps> = ({ children, className, href }) => (
-  <Link href={href} className={className}>
+  <a href={href} className={className}>
     {children}
-  </Link>
+  </a>
 )

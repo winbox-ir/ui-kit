@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import { forwardRef, type ComponentProps, type ReactNode } from "react"
 import { Size, UIColors } from "../../types"
@@ -30,12 +29,11 @@ export interface ButtonSizes extends Pick<Size, "xs" | "sm" | "lg" | "xl"> {
   [key: string]: string
 }
 
-const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>((propss, ref) => {
+const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((propss, ref) => {
   const {
     children,
     color = "info",
-    disabled = false,
-    href,
+    // disabled = false,
     label,
     outline = false,
     pill = false,
@@ -47,15 +45,14 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
     linktTarget,
     ...props
   } = propss
-  const isLink = typeof href !== "undefined"
 
-  const Component = isLink ? "a" : "button"
+  // const Component = isLink ? "a" : "button"
   const theirProps = props as object
 
   return (
-    <Component
+    <button
       className={classNames(
-        disabled && theme.disabled,
+        // disabled && theme.disabled,
         theme.color[color],
         outline && (theme.outline.color[color] ?? theme.outline.color.default),
         theme.base,
@@ -63,11 +60,8 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
         fullSized && theme.fullSized,
         className
       )}
-      disabled={disabled}
-      href={href}
-      type={isLink ? undefined : "button"}
-      ref={ref as never}
-      {...(isLink && { target: linktTarget })}
+      // disabled={disabled}
+      ref={ref}
       {...theirProps}
     >
       <span
@@ -90,7 +84,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
           {loading && <Spinner aria-label="Spinner button example" />}
         </>
       </span>
-    </Component>
+    </button>
   )
 })
 

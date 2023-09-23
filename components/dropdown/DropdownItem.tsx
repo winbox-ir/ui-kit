@@ -1,8 +1,6 @@
-"use client"
 import classNames from "classnames"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
 import { theme } from "./dropdown.theme"
-import Link from "next/link"
 
 export type DropdownItemProps = PropsWithChildren<ComponentProps<"li">> & {
   onClick?: () => void
@@ -14,10 +12,10 @@ export const DropdownItem: FC<DropdownItemProps> = ({ children, className, onCli
   return (
     <li className={classNames(theme.floating.item.base, className)} onClick={onClick}>
       {href ? (
-        <Link href={href} className={classNames(theme.floating.item.link)}>
+        <a href={href} className={classNames(theme.floating.item.link)}>
           {Icon && <Icon className={theme.floating.item.icon} />}
           {children}
-        </Link>
+        </a>
       ) : (
         <div className={classNames(theme.floating.item.inner)}>
           {Icon && <Icon className={theme.floating.item.icon} />}

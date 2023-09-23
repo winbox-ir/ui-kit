@@ -1,4 +1,3 @@
-"use client"
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from "react"
 
 export interface TabItemProps extends PropsWithChildren<Omit<ComponentProps<"div">, "title">> {

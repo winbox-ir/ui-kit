@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import { ComponentProps, forwardRef, ReactNode } from "react"
 import HelperText from "../helper-text/HelperText"

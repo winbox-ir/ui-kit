@@ -1,4 +1,3 @@
-"use client"
 import classNames from "classnames"
 import { ComponentProps, FC, PropsWithChildren } from "react"
 import { UIColors } from "../../types"

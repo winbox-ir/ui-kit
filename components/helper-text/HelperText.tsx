@@ -1,6 +1,6 @@
-"use client"
+import React from "react"
 import classNames from "classnames"
-import type { ComponentProps, FC, PropsWithChildren } from "react"
+import type { ComponentProps, PropsWithChildren } from "react"
 import { UIColors } from "../../types"
 import { theme } from "./helperText.theme"
 
@@ -13,7 +13,7 @@ export interface HelperTextProps extends PropsWithChildren<Omit<ComponentProps<"
   value?: string
 }
 
-export const HelperText: FC<HelperTextProps> = ({ value, children, color = "default", className, ...props }) => {
+export const HelperText: React.FC<HelperTextProps> = ({ value, children, color = "default", className, ...props }) => {
   return (
     <p className={classNames(theme.base, theme.colors[color], className)} {...props}>
       {value ?? children ?? ""}
