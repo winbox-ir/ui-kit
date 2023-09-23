@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react"
+"use client"
+import React, { useRef, useState } from "react"
 import { SvgLoading } from "./SvgLoading"
 // import { Pagination } from './Pagination'
+import classNames from "classnames"
 import { SvgEmptyList } from "./SvgEmptyList"
 import { TablePagination } from "./TablePagination"
-import classNames from "classnames"
 
 type Paged<T> = {
   data: T[]

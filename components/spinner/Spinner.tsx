@@ -1,45 +1,28 @@
-import classNames from 'classnames'
-import type { ComponentProps, FC } from 'react'
-import { Size, UIColors } from '../../types'
-import { theme } from './spinner.theme'
+"use client"
+import classNames from "classnames"
+import type { ComponentProps, FC } from "react"
+import { Size, UIColors } from "../../types"
+import { theme } from "./spinner.theme"
 
-export interface SpinnerProps extends Omit<ComponentProps<'span'>, 'color'> {
+export interface SpinnerProps extends Omit<ComponentProps<"span">, "color"> {
   color?: keyof SpinnerColors
   light?: boolean
   size?: keyof SpinnerSizes
 }
 
-export interface SpinnerColors
-  extends Pick<
-    UIColors,
-    'failure' | 'gray' | 'info' | 'pink' | 'purple' | 'success' | 'warning'
-  > {
+export interface SpinnerColors extends Pick<UIColors, "failure" | "gray" | "info" | "pink" | "purple" | "success" | "warning"> {
   [key: string]: string
 }
 
-export interface SpinnerSizes
-  extends Pick<Size, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export interface SpinnerSizes extends Pick<Size, "xs" | "sm" | "md" | "lg" | "xl"> {
   [key: string]: string
 }
 
-export const Spinner: FC<SpinnerProps> = ({
-  color = 'info',
-  light,
-  size = 'md',
-  className,
-  ...props
-}): JSX.Element => {
+export const Spinner: FC<SpinnerProps> = ({ color = "info", light, size = "md", className, ...props }): JSX.Element => {
   return (
     <span role="status" {...props}>
       <svg
-        className={classNames(
-          theme.base,
-          theme.color[color],
-          theme.light[light ? 'on' : 'off'].base,
-          theme.light[light ? 'on' : 'off'].color[color],
-          theme.size[size],
-          className
-        )}
+        className={classNames(theme.base, theme.color[color], theme.light[light ? "on" : "off"].base, theme.light[light ? "on" : "off"].color[color], theme.size[size], className)}
         fill="none"
         viewBox="0 0 100 101"
       >

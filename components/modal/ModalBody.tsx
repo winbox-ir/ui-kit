@@ -1,15 +1,12 @@
-import classNames from 'classnames'
-import type { ComponentProps, FC, PropsWithChildren } from 'react'
-import { theme } from './modal.theme'
-import { useModalContext } from './ModalContext'
+"use client"
+import classNames from "classnames"
+import type { ComponentProps, FC, PropsWithChildren } from "react"
+import { theme } from "./modal.theme"
+import { useModalContext } from "./ModalContext"
 
-export type ModalBodyProps = PropsWithChildren<ComponentProps<'div'>>
+export type ModalBodyProps = PropsWithChildren<ComponentProps<"div">>
 
-export const ModalBody: FC<ModalBodyProps> = ({
-  children,
-  className,
-  ...props
-}) => {
+export const ModalBody: FC<ModalBodyProps> = ({ children, className, ...props }) => {
   const { popup } = useModalContext()
 
   return (

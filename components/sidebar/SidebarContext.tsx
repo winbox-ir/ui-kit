@@ -1,17 +1,18 @@
-import { createContext, useContext } from 'react';
+"use client"
+import { createContext, useContext } from "react"
 
 export type SidebarContext = {
-  isCollapsed: boolean;
-};
+  isCollapsed: boolean
+}
 
-export const SidebarContext = createContext<SidebarContext | undefined>(undefined);
+export const SidebarContext = createContext<SidebarContext | undefined>(undefined)
 
 export function useSidebarContext(): SidebarContext {
-  const context = useContext(SidebarContext);
+  const context = useContext(SidebarContext)
 
   if (!context) {
-    throw new Error('useSidebarContext should be used within the SidebarContext provider!');
+    throw new Error("useSidebarContext should be used within the SidebarContext provider!")
   }
 
-  return context;
+  return context
 }

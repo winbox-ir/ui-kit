@@ -1,3 +1,4 @@
+"use client"
 import classNames from "classnames"
 import { useRouter } from "next/router"
 import type { ComponentProps, FC, PropsWithChildren } from "react"

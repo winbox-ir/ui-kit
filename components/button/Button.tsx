@@ -1,5 +1,5 @@
+"use client"
 import classNames from "classnames"
-import Link from "next/link"
 import { forwardRef, type ComponentProps, type ReactNode } from "react"
 import { Size, UIColors } from "../../types"
 import { Spinner } from "../spinner/Spinner"

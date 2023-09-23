@@ -1,3 +1,4 @@
+"use client"
 import type { ComponentProps, FC, PropsWithChildren, ReactElement, ReactNode } from "react"
 import React, { Children, useMemo, useState } from "react"
 import { HiOutlineChevronDown, HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlineChevronUp } from "react-icons/hi"

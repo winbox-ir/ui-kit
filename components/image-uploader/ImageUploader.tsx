@@ -1,3 +1,4 @@
+"use client"
 import axios from "axios"
 import { AnimatePresence } from "framer-motion"
 import Image from "next/image"

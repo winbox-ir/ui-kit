@@ -1,15 +1,16 @@
+"use client"
 import classNames from "classnames"
+import { motion } from "framer-motion"
 import type { ComponentProps, FC, PropsWithChildren } from "react"
 import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { CustomBoolean, Positions, Size } from "../../types"
-import { theme } from "./modal.theme"
 import { ModalBody } from "./ModalBody"
 import { ModalContext } from "./ModalContext"
 import { ModalFooter } from "./ModalFooter"
 import { ModalHeader } from "./ModalHeader"
 import { SvgLoading } from "./SvgLoading"
-import { AnimatePresence, motion } from "framer-motion"
+import { theme } from "./modal.theme"
 
 export interface FlowbiteModalTheme {
   base: string

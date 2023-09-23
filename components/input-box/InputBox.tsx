@@ -1,3 +1,4 @@
+"use client"
 import classNames from "classnames"
 import React from "react"
 import { Control, RegisterOptions, useController } from "react-hook-form"

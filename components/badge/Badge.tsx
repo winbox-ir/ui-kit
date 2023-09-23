@@ -1,7 +1,8 @@
-import classNames from 'classnames'
-import type { ComponentProps, FC, PropsWithChildren } from 'react'
-import { Size, UIColors } from '../../types'
-import { theme } from './badge.theme'
+"use client"
+import classNames from "classnames"
+import type { ComponentProps, FC, PropsWithChildren } from "react"
+import { Size, UIColors } from "../../types"
+import { theme } from "./badge.theme"
 
 export interface FlowbiteBadgeTheme {
   base: string
@@ -15,54 +16,25 @@ export interface FlowbiteBadgeTheme {
   size: BadgeSizes
 }
 
-export interface BadgeColors
-  extends Pick<
-    UIColors,
-    'failure' | 'gray' | 'indigo' | 'info' | 'pink' | 'purple' | 'success'
-  > {
+export interface BadgeColors extends Pick<UIColors, "failure" | "gray" | "indigo" | "info" | "pink" | "purple" | "success"> {
   [key: string]: string
 }
 
-export interface BadgeSizes extends Pick<Size, 'xs' | 'sm'> {
+export interface BadgeSizes extends Pick<Size, "xs" | "sm"> {
   [key: string]: string
 }
 
-export interface BadgeProps
-  extends PropsWithChildren<Omit<ComponentProps<'span'>, 'color'>> {
+export interface BadgeProps extends PropsWithChildren<Omit<ComponentProps<"span">, "color">> {
   color?: keyof BadgeColors
   href?: string
-  icon?: FC<ComponentProps<'svg'>>
+  icon?: FC<ComponentProps<"svg">>
   size?: keyof BadgeSizes
 }
 
-export const Badge: FC<BadgeProps> = ({
-  children,
-  color = 'info',
-  href,
-  icon: Icon,
-  size = 'xs',
-  className,
-  ...props
-}): JSX.Element => {
+export const Badge: FC<BadgeProps> = ({ children, color = "info", href, icon: Icon, size = "xs", className, ...props }): JSX.Element => {
   const Content = (): JSX.Element => (
-    <span
-      className={classNames(
-        theme.base,
-        theme.color[color],
-        theme.icon[Icon ? 'on' : 'off'],
-        theme.size[size],
-        className
-      )}
-      data-testid="flowbite-badge"
-      {...props}
-    >
-      {Icon && (
-        <Icon
-          aria-hidden
-          className={theme.icon.size[size]}
-          data-testid="flowbite-badge-icon"
-        />
-      )}
+    <span className={classNames(theme.base, theme.color[color], theme.icon[Icon ? "on" : "off"], theme.size[size], className)} data-testid="flowbite-badge" {...props}>
+      {Icon && <Icon aria-hidden className={theme.icon.size[size]} data-testid="flowbite-badge-icon" />}
       {children && <span>{children}</span>}
     </span>
   )

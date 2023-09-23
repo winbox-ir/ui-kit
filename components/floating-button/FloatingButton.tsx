@@ -1,3 +1,4 @@
+"use client"
 import classNames from "classnames"
 import React, { useState, useRef, useEffect, PropsWithChildren, useMemo } from "react"
 import { IoAddOutline } from "react-icons/io5"

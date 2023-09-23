@@ -1,12 +1,12 @@
+"use client"
 import classNames from "classnames"
 import Image from "next/image"
 import type { ComponentProps, FC, PropsWithChildren, ReactElement } from "react"
 import { DeepPartial } from ".."
-import { mergeDeep } from "../../helper/mergeDeep"
 import { Positions, Size, UIColors } from "../../types"
-import { theme } from "./avatar.theme"
 import AvatarGroup from "./AvatarGroup"
 import AvatarGroupCounter from "./AvatarGroupCounter"
+import { theme } from "./avatar.theme"
 
 export interface FlowbiteAvatarTheme {
   root: FlowbiteAvatarRootTheme
