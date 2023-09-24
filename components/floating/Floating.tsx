@@ -16,7 +16,7 @@ export interface FlowbiteFloatingTheme {
     light: string
     auto: string
   }
-  content: string
+  content?: string
   arrow: {
     base: string
     style: {
@@ -28,8 +28,8 @@ export interface FlowbiteFloatingTheme {
   }
 }
 
-export interface FloatingProps extends PropsWithChildren<Omit<ComponentProps<"div">, "style">> {
-  content: ReactNode
+export type FloatingProps = PropsWithChildren<Omit<ComponentProps<"div">, "style" | "content">> & {
+  content?: ReactNode
   theme: FlowbiteFloatingTheme | FloatingDropdownTheme
   placement?: "auto" | Placement
   trigger?: "hover" | "click"

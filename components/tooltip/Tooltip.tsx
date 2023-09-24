@@ -5,7 +5,7 @@ import { theme } from "./tooltip.theme"
 
 export interface FlowbiteTooltipTheme extends FlowbiteFloatingTheme {}
 
-export interface TooltipProps extends PropsWithChildren<Omit<ComponentProps<"div">, "style">> {
+export type TooltipProps = PropsWithChildren<Omit<ComponentProps<"div">, "style" | "content">> & {
   content: ReactNode
   placement?: "auto" | Placement
   trigger?: "hover" | "click"

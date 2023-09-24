@@ -86,7 +86,7 @@ const DropdownComponent: FC<DropdownProps> = ({ children, className, dismissOnCl
     return node
   }
 
-  const content = useMemo(() => <ul className={theme.content}>{Children.map(children, attachCloseListener)}</ul>, [children, theme])
+  const content: ReactNode = useMemo(() => <ul className={theme.content}>{Children.map(children, attachCloseListener)}</ul>, [children, theme])
 
   const TriggerWrapper: FC<ButtonProps> = ({ children }): JSX.Element =>
     inline ? (
@@ -94,9 +94,7 @@ const DropdownComponent: FC<DropdownProps> = ({ children, className, dismissOnCl
         {children}
       </button>
     ) : (
-      <Button {...buttonProps}>
-        {children}
-      </Button>
+      <Button {...buttonProps}>{children}</Button>
     )
 
   return (
